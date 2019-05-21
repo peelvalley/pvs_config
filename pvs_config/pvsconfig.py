@@ -10,5 +10,5 @@ class PVSConfig():
     def kwargs(self):
         return deepcopy(self.__kwargs)
 
-    def get_option(self, option):
-        return self.__kwargs.get(option, os.environ.get(option.upper()))
+    def get_option(self, option, default):
+        return self.__kwargs.get(option, os.environ.get(option.upper(), default))
